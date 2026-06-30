@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Complaints{% endblock %}
+
+{% block header %}
+    {% include 'user_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-lg-5">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h3 class="fw-bold mb-2">Send a complaint</h3>
+                    <p class="text-muted mb-4">Let us know about any issue and we’ll follow up promptly.</p>
+                    <form action="" method="post">
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Complaint</label>
+                            <textarea class="form-control" name="complaint" rows="4" placeholder="Place your complaint"></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-ev-primary w-100 fw-semibold">Submit Complaint</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Complaint</th>
+                                    <th>Reply</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in a %}
+                                <tr>
+                                    <td>{{ i.complaint }}</td>
+                                    <td>{{ i.reply }}</td>
+                                    <td>{{ i.complaint_date }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

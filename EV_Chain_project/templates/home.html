@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Smart Charging Management{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <section class="hero-card rounded-4 overflow-hidden shadow-lg">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-7 p-5 p-lg-6">
+                <span class="badge rounded-pill bg-light text-success fw-semibold px-3 py-2 mb-3">
+                    <i class="fa-solid fa-bolt me-2"></i>Next-gen EV charging ecosystem
+                </span>
+                <h1 class="display-5 fw-bold mb-3">Manage EV charging operations with clarity and speed.</h1>
+                <p class="lead mb-4 text-muted">Empower admins, users, and charging centers with a modern, responsive platform built for seamless booking and support.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="/login" class="btn btn-ev-primary px-4 py-2 fw-semibold">Get Started</a>
+                    <a href="/user_reg" class="btn btn-outline-ev px-4 py-2 fw-semibold">Register Now</a>
+                </div>
+            </div>
+            <div class="col-lg-5 hero-visual">
+                <div class="h-100 p-4 d-flex align-items-center justify-content-center">
+                    <div class="hero-badge text-center">
+                        <i class="fa-solid fa-charging-station fa-4x text-success mb-3"></i>
+                        <h4 class="fw-bold mb-2">24/7 Smart Access</h4>
+                        <p class="text-muted mb-0">Fast, reliable, and connected EV charging for every community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row g-4 mt-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card">
+                <div class="card-body p-4">
+                    <div class="icon-circle bg-success-subtle text-success mb-3"><i class="fa-solid fa-users"></i></div>
+                    <h5 class="fw-semibold">User-friendly experience</h5>
+                    <p class="text-muted mb-0">A polished interface for discovering centers, booking slots, and managing requests effortlessly.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card">
+                <div class="card-body p-4">
+                    <div class="icon-circle bg-info-subtle text-info mb-3"><i class="fa-solid fa-sliders"></i></div>
+                    <h5 class="fw-semibold">Powerful administration</h5>
+                    <p class="text-muted mb-0">Monitor centers, users, feedback, and complaints from one elegant control center.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm feature-card">
+                <div class="card-body p-4">
+                    <div class="icon-circle bg-primary-subtle text-primary mb-3"><i class="fa-solid fa-rectangle-list"></i></div>
+                    <h5 class="fw-semibold">Real-time operations</h5>
+                    <p class="text-muted mb-0">Stay updated with booking statuses, service feedback, and faster dispute resolution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

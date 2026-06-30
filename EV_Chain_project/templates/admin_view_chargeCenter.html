@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Charging Centers{% endblock %}
+
+{% block header %}
+    {% include 'admin_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1">Charging Centers</h3>
+            <p class="text-muted mb-0">Review and manage all connected charging facilities.</p>
+        </div>
+    </div>
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>CENTER NAME</th>
+                            <th>CENTER PHONE</th>
+                            <th>CENTER EMAIL</th>
+                            <th>LATITUDE</th>
+                            <th>LONGITUDE</th>
+                            <th>CENTER PLACE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in a %}
+                        <tr>
+                            <td>{{ i.center_name }}</td>
+                            <td>{{ i.center_phone }}</td>
+                            <td>{{ i.center_email }}</td>
+                            <td>{{ i.lati }}</td>
+                            <td>{{ i.longi }}</td>
+                            <td>{{ i.center_place }}</td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a class="btn btn-sm btn-outline-danger" href="/block/{{ i.login_id }}">Block</a>
+                                    <a class="btn btn-sm btn-outline-success" href="/unblock/{{ i.login_id }}">Unblock</a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

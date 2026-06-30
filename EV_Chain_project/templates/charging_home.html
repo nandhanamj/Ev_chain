@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Charging Center Dashboard{% endblock %}
+
+{% block header %}
+    {% include 'charging_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-lg-3">
+            <div class="dashboard-sidebar rounded-4 p-4 shadow-sm">
+                <div class="mb-4">
+                    <p class="text-uppercase small fw-semibold text-muted mb-2">Operations</p>
+                    <h4 class="fw-bold mb-0">Center Control</h4>
+                </div>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-ev-primary" href="/viewbookings"><i class="fa-solid fa-calendar-check me-2"></i>Bookings</a>
+                    <a class="btn btn-outline-ev-dark" href="/viewusers"><i class="fa-solid fa-users me-2"></i>Users</a>
+                    <a class="btn btn-outline-ev-dark" href="/centerfeedback"><i class="fa-solid fa-comment-dots me-2"></i>Feedback</a>
+                    <a class="btn btn-outline-ev-dark" href="/centercomplaint"><i class="fa-solid fa-headset me-2"></i>Complaints</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="hero-card rounded-4 p-4 p-lg-5 shadow-lg mb-4">
+                <h2 class="fw-bold mb-2">Charging Center Overview</h2>
+                <p class="mb-0 text-white-50">Keep bookings, users, complaints, and feedback organized with a modern management view.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="text-muted">View Bookings</h6>
+                                    <h3 class="fw-bold">Monitor</h3>
+                                </div>
+                                <div class="icon-circle bg-success-subtle text-success"><i class="fa-solid fa-list-check"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="text-muted">Users</h6>
+                                    <h3 class="fw-bold">Support</h3>
+                                </div>
+                                <div class="icon-circle bg-info-subtle text-info"><i class="fa-solid fa-users"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="text-muted">Feedback</h6>
+                                    <h3 class="fw-bold">Improve</h3>
+                                </div>
+                                <div class="icon-circle bg-primary-subtle text-primary"><i class="fa-solid fa-comment-dots"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="text-muted">Complaints</h6>
+                                    <h3 class="fw-bold">Resolve</h3>
+                                </div>
+                                <div class="icon-circle bg-warning-subtle text-warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

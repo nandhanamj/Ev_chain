@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Center Feedback{% endblock %}
+
+{% block header %}
+    {% include 'charging_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-lg-3">
+            <div class="dashboard-sidebar rounded-4 p-4 shadow-sm">
+                <h5 class="fw-bold mb-3">Center Tools</h5>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-outline-ev-dark" href="/viewbookings"><i class="fa-solid fa-calendar-check me-2"></i>Bookings</a>
+                    <a class="btn btn-outline-ev-dark" href="/viewusers"><i class="fa-solid fa-users me-2"></i>Users</a>
+                    <a class="btn btn-ev-primary" href="/centerfeedback"><i class="fa-solid fa-comment-dots me-2"></i>Feedback</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h3 class="fw-bold mb-2">Send feedback</h3>
+                    <p class="text-muted mb-4">Share your experience and help improve the charging center service.</p>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Feedback</label>
+                            <textarea class="form-control" name="feedback" rows="4" placeholder="Place your feedback"></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-ev-primary w-100 fw-semibold">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

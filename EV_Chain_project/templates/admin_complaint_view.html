@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Complaint Center{% endblock %}
+
+{% block header %}
+    {% include 'admin_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1">Complaints Queue</h3>
+            <p class="text-muted mb-0">Address issues quickly and keep services running smoothly.</p>
+        </div>
+    </div>
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>COMPLAINT</th>
+                            <th>REPLY</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in b %}
+                        <tr>
+                            <td>{{ i.complaint }}</td>
+                            <td>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <span>{{ i.reply }}</span>
+                                    <a class="btn btn-sm btn-outline-ev" href="/sendreply/{{ i.complaint_id }}">Send reply</a>
+                                </div>
+                            </td>
+                            <td>{{ i.complaint_date }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

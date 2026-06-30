@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Charging Center Registration{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4 p-lg-5">
+                    <div class="text-center mb-4">
+                        <div class="icon-circle bg-info-subtle text-info mb-3 mx-auto"><i class="fa-solid fa-charging-station"></i></div>
+                        <h3 class="fw-bold mb-2">Register your charging center</h3>
+                        <p class="text-muted mb-0">Join the EV Chain network and start serving electric vehicle drivers.</p>
+                    </div>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Center Name</label>
+                                <input type="text" class="form-control" name="center_name" placeholder="Enter center name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Phone No</label>
+                                <input type="text" class="form-control" name="center_phone" placeholder="Enter contact no">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Email</label>
+                                <input type="email" class="form-control" name="center_email" placeholder="Enter Email">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Place</label>
+                                <input type="text" class="form-control" name="center_place" placeholder="Enter place">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Latitude</label>
+                                <input type="text" class="form-control" name="center_latitude" placeholder="Enter latitude">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Longitude</label>
+                                <input type="text" class="form-control" name="center_longitude" placeholder="Enter longitude">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Username</label>
+                                <input type="text" class="form-control" name="center_username" placeholder="Enter username">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Password</label>
+                                <input type="password" class="form-control" name="center_password" placeholder="Enter password">
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" name="submit" class="btn btn-ev-primary px-4 fw-semibold">Register Center</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

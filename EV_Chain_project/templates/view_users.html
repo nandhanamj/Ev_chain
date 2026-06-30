@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Center Users{% endblock %}
+
+{% block header %}
+    {% include 'charging_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-lg-3">
+            <div class="dashboard-sidebar rounded-4 p-4 shadow-sm">
+                <h5 class="fw-bold mb-3">Center Menu</h5>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-outline-ev-dark" href="/viewbookings"><i class="fa-solid fa-calendar-check me-2"></i>Bookings</a>
+                    <a class="btn btn-ev-primary" href="/viewusers"><i class="fa-solid fa-users me-2"></i>Users</a>
+                    <a class="btn btn-outline-ev-dark" href="/centercomplaint"><i class="fa-solid fa-headset me-2"></i>Complaints</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h3 class="fw-bold mb-1">Registered Users</h3>
+                    <p class="text-muted mb-0">Review user accounts associated with your station.</p>
+                </div>
+            </div>
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
+                                    <th>PLACE</th>
+                                    <th>POST</th>
+                                    <th>PIN CODE</th>
+                                    <th>GENDER</th>
+                                    <th>PHONE</th>
+                                    <th>EMAIL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in d %}
+                                <tr>
+                                    <td>{{ i.fname }}</td>
+                                    <td>{{ i.lname }}</td>
+                                    <td>{{ i.place }}</td>
+                                    <td>{{ i.post }}</td>
+                                    <td>{{ i.pin }}</td>
+                                    <td>{{ i.gender }}</td>
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.email }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

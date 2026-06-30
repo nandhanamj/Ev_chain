@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Book Slot{% endblock %}
+
+{% block header %}
+    {% include 'user_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h3 class="fw-bold mb-2">Book a charging slot</h3>
+                    <p class="text-muted mb-4">Select your preferred slot and confirm your reservation.</p>
+                    <form action="" method="post">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Date</label>
+                            <input type="date" class="form-control" name="date">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Time</label>
+                            <input type="time" class="form-control" name="time">
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-ev-primary w-100 fw-semibold">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

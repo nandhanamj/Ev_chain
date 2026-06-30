@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Send Feedback{% endblock %}
+
+{% block header %}
+    {% include 'user_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h3 class="fw-bold mb-2">Share your feedback</h3>
+                    <p class="text-muted mb-4">Tell us how your EV charging experience was.</p>
+                    <form action="" method="post">
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Feedback</label>
+                            <textarea class="form-control" name="feedback" rows="4" placeholder="Place your feedback"></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-ev-primary w-100 fw-semibold">Send Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

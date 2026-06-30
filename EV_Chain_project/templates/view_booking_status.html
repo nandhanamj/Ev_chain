@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Booking Status{% endblock %}
+
+{% block header %}
+    {% include 'user_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1">Booking Status</h3>
+            <p class="text-muted mb-0">Track your upcoming and completed reservations.</p>
+        </div>
+    </div>
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>TIME</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in a %}
+                        <tr>
+                            <td>{{ i.date }}</td>
+                            <td>{{ i.time }}</td>
+                            <td>{{ i.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

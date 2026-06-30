@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}EV Chain | Center Complaints{% endblock %}
+
+{% block header %}
+    {% include 'charging_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-lg-3">
+            <div class="dashboard-sidebar rounded-4 p-4 shadow-sm">
+                <h5 class="fw-bold mb-3">Support Center</h5>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-outline-ev-dark" href="/viewbookings"><i class="fa-solid fa-calendar-check me-2"></i>Bookings</a>
+                    <a class="btn btn-outline-ev-dark" href="/viewusers"><i class="fa-solid fa-users me-2"></i>Users</a>
+                    <a class="btn btn-ev-primary" href="/centercomplaint"><i class="fa-solid fa-headset me-2"></i>Complaints</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-lg rounded-4">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="fw-bold mb-2">Report a complaint</h3>
+                            <p class="text-muted mb-4">Submit issues and review updates in one place.</p>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold">Complaint</label>
+                                    <textarea class="form-control" name="complaint" rows="4" placeholder="Place your complaint"></textarea>
+                                </div>
+                                <button type="submit" name="submit" class="btn btn-ev-primary w-100 fw-semibold">Submit Complaint</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Complaint</th>
+                                            <th>Reply</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in a %}
+                                        <tr>
+                                            <td>{{ i.complaint }}</td>
+                                            <td>{{ i.reply }}</td>
+                                            <td>{{ i.complaint_date }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
